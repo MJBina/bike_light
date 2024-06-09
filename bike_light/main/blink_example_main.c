@@ -15,15 +15,21 @@
 #include "sdkconfig.h"
 #include "led_ctrl.h"
 
+
+static const char *TAG = "blink_example_main";
+
 void app_main(void)
 {
+    ESP_LOGI(TAG, "Starting app_main");
 
     /* Configure the peripheral according to the LED type */
-    configure_led();
+    led_configure();
 
     while (1) {
-        // blink_led();
-        cycle_led();
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+        //  led_blink();
+        //  led_cycle();
+        led_bounce(12);
+        // vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+        vTaskDelay(30 / portTICK_PERIOD_MS);
     }
 }
