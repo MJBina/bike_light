@@ -63,7 +63,7 @@ void led_bounce(int num_leds)
     static int led = 0;
     static bool up = true;
 
-    ESP_LOGI(TAG, "led bounce (%d)", led);
+    // ESP_LOGI(TAG, "led bounce (%d)", led);
 
     led_strip_clear(led_strip);
     led_strip_set_pixel(led_strip, led, 64, 0, 0);

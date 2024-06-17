@@ -6,14 +6,13 @@
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
 */
-#include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/gpio.h"
 #include "esp_log.h"
-#include "led_strip.h"
 #include "sdkconfig.h"
 #include "led_ctrl.h"
+#include "hw.h"
+#include "mpu6050.h"
 
 
 static const char *TAG = "blink_example_main";
@@ -22,7 +21,7 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "Starting app_main");
 
-    /* Configure the peripheral according to the LED type */
+    mpu6050_configure();
     led_configure();
 
     while (1) {
