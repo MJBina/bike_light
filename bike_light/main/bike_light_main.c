@@ -15,7 +15,7 @@
 #include "mpu6050.h"
 
 
-static const char *TAG = "blink_example_main";
+static const char *TAG = "bike_light_main";
 
 void app_main(void)
 {
